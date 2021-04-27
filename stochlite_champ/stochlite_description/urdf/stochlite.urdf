@@ -123,8 +123,41 @@
     <axis xyz="0 1 0"/>
     <limit effort="4.1" lower="-10.22" upper="10.22" velocity="4.6"/>
   </joint>
+
+<!-- FL TOE -->
+
   <link name="fl_toe_link">
-        </link>
+      <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.0132"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 -0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.014"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.66666666667e-10" ixy="0.0" ixz="0.0" iyy="1.66666666667e-10" iyz="0.0" izz="1.66666666667e-10"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="fl_toe_link">
+    <sensor name="fl_toe_link_contactsensor_sensor" type="contact">
+        <contact>
+            <collision>fl_shank_link_fixed_joint_lump__fl_toe_link_collision_1</collision>
+        </contact>
+        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>bumper_vals</bumperTopicName>
+            <frameName>fl_toe_link</frameName>
+        </plugin>
+    </sensor>
+  </gazebo>
+
   <joint name="fl_toe_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.023481 -0.169"/>
     <axis xyz="0 1 0"/>
@@ -218,8 +251,41 @@
     <axis xyz="0 1 0"/>
     <limit effort="4.1" lower="-10.22" upper="10.22" velocity="4.6"/>
   </joint>
+
+  <!-- FR TOE LINK -->
   <link name="fr_toe_link">
-        </link>
+        <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.0132"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.014"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.66666666667e-10" ixy="0.0" ixz="0.0" iyy="1.66666666667e-10" iyz="0.0" izz="1.66666666667e-10"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="fr_toe_link">
+    <sensor name="fr_toe_link_contactsensor_sensor" type="contact">
+        <contact>
+            <collision>fr_shank_link_fixed_joint_lump__fr_toe_link_collision_1</collision>
+        </contact>
+        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>bumper_vals</bumperTopicName>
+            <frameName>fr_toe_link</frameName>
+        </plugin>
+    </sensor>
+  </gazebo>
+
+
   <joint name="fr_toe_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 -0.023481 -0.169"/>
     <axis xyz="0 1 0"/>
@@ -313,8 +379,40 @@
     <axis xyz="0 1 0"/>
     <limit effort="4.1" lower="-10.22" upper="10.22" velocity="4.6"/>
   </joint>
+
+  <!-- BL TOE LINK -->
   <link name="bl_toe_link">
-        </link>
+      <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.0132"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 -0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.014"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.66666666667e-10" ixy="0.0" ixz="0.0" iyy="1.66666666667e-10" iyz="0.0" izz="1.66666666667e-10"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="bl_toe_link">
+    <sensor name="bl_toe_link_contactsensor_sensor" type="contact">
+        <contact>
+            <collision>bl_shank_link_fixed_joint_lump__bl_toe_link_collision_1</collision>
+        </contact>
+        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>bumper_vals</bumperTopicName>
+            <frameName>bl_toe_link</frameName>
+        </plugin>
+    </sensor>
+  </gazebo>
+  
   <joint name="bl_toe_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.023481 -0.169"/>
     <axis xyz="0 1 0"/>
@@ -408,8 +506,40 @@
     <axis xyz="0 1 0"/>
     <limit effort="4.1" lower="-10.22" upper="10.22" velocity="4.6"/>
   </joint>
+
+  <!-- BR TOE LINK -->
   <link name="br_toe_link">
-        </link>
+        <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.0132"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0033 0.0095"/>
+      <geometry>
+        <sphere radius="0.014"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.66666666667e-10" ixy="0.0" ixz="0.0" iyy="1.66666666667e-10" iyz="0.0" izz="1.66666666667e-10"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="br_toe_link">
+    <sensor name="br_toe_link_contactsensor_sensor" type="contact">
+        <contact>
+            <collision>br_shank_link_fixed_joint_lump__br_toe_link_collision_1</collision>
+        </contact>
+        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>bumper_vals</bumperTopicName>
+            <frameName>br_toe_link</frameName>
+        </plugin>
+    </sensor>
+  </gazebo>
+
   <joint name="br_toe_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 -0.023481 -0.169"/>
     <axis xyz="0 1 0"/>

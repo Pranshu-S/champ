@@ -1,0 +1,1289 @@
+<sdf version='1.6'>
+  <model name='stochlite'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.000116 0.000432 -0.008184 0 -0 0</pose>
+        <mass>1.589</mass>
+        <inertia>
+          <ixx>0.00576939</ixx>
+          <ixy>7.18965e-06</ixy>
+          <ixz>3.69974e-06</ixz>
+          <iyy>0.0254043</iyy>
+          <iyz>1.34198e-06</iyz>
+          <izz>0.0303283</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__imu_link_1_visual_1'>
+        <pose frame=''>0 0 0.005 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.005 0.005</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_1_visual_2'>
+        <pose frame=''>0.15 0 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_2_visual_3'>
+        <pose frame=''>0.065 0.047 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_3_visual_4'>
+        <pose frame=''>-0.065 0.047 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_4_visual_5'>
+        <pose frame=''>-0.15 0 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_5_visual_6'>
+        <pose frame=''>-0.065 -0.047 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tof_link_6_visual_7'>
+        <pose frame=''>0.065 -0.047 -0.025 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.015 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <sensor name='tof_sensor_1' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_1' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_1</topicName>
+          <frameName>frame_range_tof_1</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>0.15 0 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+      <velocity_decay/>
+      <sensor name='tof_sensor_2' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_2' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_2</topicName>
+          <frameName>frame_range_tof_2</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>0.065 0.047 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+      <velocity_decay/>
+      <sensor name='tof_sensor_3' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_3' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_3</topicName>
+          <frameName>frame_range_tof_3</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>-0.065 0.047 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+      <velocity_decay/>
+      <sensor name='tof_sensor_4' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_4' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_4</topicName>
+          <frameName>frame_range_tof_4</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>-0.15 0 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+      <velocity_decay/>
+      <sensor name='tof_sensor_5' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_5' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_5</topicName>
+          <frameName>frame_range_tof_5</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>-0.065 -0.047 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <sensor name='tof_sensor_6' type='ray'>
+        <visualize>1</visualize>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.02618</min_angle>
+              <max_angle>0.02618</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.002</min>
+            <max>2</max>
+            <resolution>0.005</resolution>
+          </range>
+        </ray>
+        <plugin name='tof_plugin_6' filename='libgazebo_ros_range.so'>
+          <topicName>gazebo/range_tof_6</topicName>
+          <frameName>frame_range_tof_6</frameName>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <updateRate>20</updateRate>
+          <radiation>light</radiation>
+          <fov>0.43</fov>
+        </plugin>
+        <pose frame=''>0.065 -0.047 -0.025 3.14159 1.57079 3.14159</pose>
+      </sensor>
+    </link>
+    <link name='bl_abd_link'>
+      <pose frame=''>-0.16695 0.0956 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.002966 0.011479 -0 0 -0 0</pose>
+        <mass>0.037</mass>
+        <inertia>
+          <ixx>0.00043261</ixx>
+          <ixy>-0.00067195</ixy>
+          <ixz>3.147e-05</ixz>
+          <iyy>0.0010929</iyy>
+          <iyz>-1.979e-05</iyz>
+          <izz>0.0051879</izz>
+        </inertia>
+      </inertial>
+      <collision name='bl_abd_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='bl_abd_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='bl_abd_joint' type='revolute'>
+      <child>bl_abd_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.572</lower>
+          <upper>1.572</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='bl_thigh_link'>
+      <pose frame=''>-0.16695 0.147619 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-2e-05 -0.00177 -0.073 0 -0 0</pose>
+        <mass>0.32</mass>
+        <inertia>
+          <ixx>0.0098348</ixx>
+          <ixy>-0.007793</ixy>
+          <ixz>0.0041676</ixz>
+          <iyy>0.011945</iyy>
+          <iyz>-0.0036449</iyz>
+          <izz>0.015815</izz>
+        </inertia>
+      </inertial>
+      <collision name='bl_thigh_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='bl_thigh_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='bl_hip_joint' type='revolute'>
+      <child>bl_thigh_link</child>
+      <parent>bl_abd_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='bl_shank_link'>
+      <pose frame=''>-0.16695 0.1711 -0.151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.014581 -0.08739 0 -0 0</pose>
+        <mass>0.055</mass>
+        <inertia>
+          <ixx>0.0051196</ixx>
+          <ixy>-0.0017032</ixy>
+          <ixz>0.0021654</ixz>
+          <iyy>0.0047604</iyy>
+          <iyz>-0.0024225</iyz>
+          <izz>0.0034315</izz>
+        </inertia>
+      </inertial>
+      <collision name='bl_shank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='bl_shank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/bl_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='bl_knee_joint' type='revolute'>
+      <child>bl_shank_link</child>
+      <parent>bl_thigh_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='br_abd_link'>
+      <pose frame=''>-0.16695 -0.0964 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.002966 -0.011479 0 0 -0 0</pose>
+        <mass>0.037</mass>
+        <inertia>
+          <ixx>0.00043896</ixx>
+          <ixy>0.00067699</ixy>
+          <ixz>3.148e-05</ixz>
+          <iyy>0.0010929</iyy>
+          <iyz>1.994e-05</iyz>
+          <izz>0.0015252</izz>
+        </inertia>
+      </inertial>
+      <collision name='br_abd_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='br_abd_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='br_abd_joint' type='revolute'>
+      <child>br_abd_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.572</lower>
+          <upper>1.572</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='br_thigh_link'>
+      <pose frame=''>-0.16695 -0.148419 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>2e-05 0.00177 -0.073 0 -0 0</pose>
+        <mass>0.32</mass>
+        <inertia>
+          <ixx>0.0099097</ixx>
+          <ixy>0.0078336</ixy>
+          <ixz>0.0041665</ixz>
+          <iyy>0.01194</iyy>
+          <iyz>0.0036649</iyz>
+          <izz>0.015885</izz>
+        </inertia>
+      </inertial>
+      <collision name='br_thigh_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='br_thigh_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='br_hip_joint' type='revolute'>
+      <child>br_thigh_link</child>
+      <parent>br_abd_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='br_shank_link'>
+      <pose frame=''>-0.16695 -0.1719 -0.151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0.014581 -0.08739 0 -0 0</pose>
+        <mass>0.055</mass>
+        <inertia>
+          <ixx>0.00513592</ixx>
+          <ixy>0.00171056</ixy>
+          <ixz>0.0021654</ixz>
+          <iyy>0.00476045</iyy>
+          <iyz>0.0024329</iyz>
+          <izz>0.00344789</izz>
+        </inertia>
+      </inertial>
+      <collision name='br_shank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='br_shank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/br_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='br_knee_joint' type='revolute'>
+      <child>br_shank_link</child>
+      <parent>br_thigh_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fl_abd_link'>
+      <pose frame=''>0.16695 0.0956 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.002966 0.011479 0 0 -0 0</pose>
+        <mass>0.037</mass>
+        <inertia>
+          <ixx>0.00043261</ixx>
+          <ixy>0.00067195</ixy>
+          <ixz>-3.148e-05</ixz>
+          <iyy>0.00109285</iyy>
+          <iyz>-1.979e-05</iyz>
+          <izz>0.00151879</izz>
+        </inertia>
+      </inertial>
+      <collision name='fl_abd_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='fl_abd_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fl_abd_joint' type='revolute'>
+      <child>fl_abd_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.572</lower>
+          <upper>1.572</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fl_thigh_link'>
+      <pose frame=''>0.16695 0.147619 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-2e-05 -0.00177 -0.073 0 -0 0</pose>
+        <mass>0.32</mass>
+        <inertia>
+          <ixx>0.00983483</ixx>
+          <ixy>0.00779081</ixy>
+          <ixz>-0.0041665</ixz>
+          <iyy>0.0119397</iyy>
+          <iyz>-0.00364492</iyz>
+          <izz>0.0158104</izz>
+        </inertia>
+      </inertial>
+      <collision name='fl_thigh_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='fl_thigh_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fl_hip_joint' type='revolute'>
+      <child>fl_thigh_link</child>
+      <parent>fl_abd_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fl_shank_link'>
+      <pose frame=''>0.16695 0.1711 -0.151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.01474 -0.088847 0 -0 0</pose>
+        <mass>0.056</mass>
+        <inertia>
+          <ixx>0.00512618</ixx>
+          <ixy>0.00170322</ixy>
+          <ixz>-0.0021654</ixz>
+          <iyy>0.00476699</iyy>
+          <iyz>-0.00242181</iyz>
+          <izz>0.00343161</izz>
+        </inertia>
+      </inertial>
+      <collision name='fl_shank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='fl_shank_link_fixed_joint_lump__fl_toe_link_collision_1'>
+        <pose frame=''>0 0.020181 -0.1595 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.013</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='fl_shank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fl_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='fl_shank_link_fixed_joint_lump__fl_toe_link_visual_1'>
+        <pose frame=''>0 0.020181 -0.1595 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.013</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fl_knee_joint' type='revolute'>
+      <child>fl_shank_link</child>
+      <parent>fl_thigh_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fr_abd_link'>
+      <pose frame=''>0.16695 -0.0964 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.002966 -0.011479 0 0 -0 0</pose>
+        <mass>0.037</mass>
+        <inertia>
+          <ixx>0.00043896</ixx>
+          <ixy>-0.00067699</ixy>
+          <ixz>-3.147e-05</ixz>
+          <iyy>0.0010929</iyy>
+          <iyz>1.993e-05</iyz>
+          <izz>0.0015252</izz>
+        </inertia>
+      </inertial>
+      <collision name='fr_abd_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='fr_abd_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_abd_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fr_abd_joint' type='revolute'>
+      <child>fr_abd_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.572</lower>
+          <upper>1.572</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fr_thigh_link'>
+      <pose frame=''>0.16695 -0.148419 -0.005 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>2e-05 0.00177 -0.073 0 -0 0</pose>
+        <mass>0.32</mass>
+        <inertia>
+          <ixx>0.0099097</ixx>
+          <ixy>-0.00783571</ixy>
+          <ixz>-0.00416764</ixz>
+          <iyy>0.0119446</iyy>
+          <iyz>0.00366487</iyz>
+          <izz>0.0158902</izz>
+        </inertia>
+      </inertial>
+      <collision name='fr_thigh_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='fr_thigh_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_thigh_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fr_hip_joint' type='revolute'>
+      <child>fr_thigh_link</child>
+      <parent>fr_abd_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='fr_shank_link'>
+      <pose frame=''>0.16695 -0.1719 -0.151 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0.014581 -0.08739 0 -0 0</pose>
+        <mass>0.055</mass>
+        <inertia>
+          <ixx>0.00513592</ixx>
+          <ixy>-0.00171056</ixy>
+          <ixz>-0.0021654</ixz>
+          <iyy>0.00476044</iyy>
+          <iyz>0.0024329</iyz>
+          <izz>0.00344789</izz>
+        </inertia>
+      </inertial>
+      <collision name='fr_shank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>4</mu>
+              <mu2>4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='fr_shank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stochlite_description/meshes/fr_shank_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='fr_knee_joint' type='revolute'>
+      <child>fr_shank_link</child>
+      <parent>fr_thigh_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-10.22</lower>
+          <upper>10.22</upper>
+          <effort>4.1</effort>
+          <velocity>4.6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <legacyModeNS>1</legacyModeNS>
+    </plugin>
+    <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
+      <alwaysOn>1</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>odom/ground_truth</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+    <static>0</static>
+    <plugin name='imu_1_controller' filename='libhector_gazebo_ros_imu.so'>
+      <updateRate>20</updateRate>
+      <topicName>imu_1/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005</rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005</rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+      <bodyName>base_link</bodyName>
+      <xyzOffset>0 0 -0.005</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+    </plugin>
+  </model>
+</sdf>
