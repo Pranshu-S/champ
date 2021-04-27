@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/champ/champ/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/champ/champ_base/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/champ/champ_config/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/champ/stochlite_champ/stochlite_config/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/champ/stochlite_champ/stochlite_gazebo/include/**",
+        "/home/pranshu/ROS_WORKSPACES/IISC_QP/src/yocs_velocity_smoother/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

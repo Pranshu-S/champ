@@ -284,39 +284,7 @@
     <minDepth>0.001</minDepth>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
-
-  <link name="lf_foot_link">
-    <visual>
-      <origin rpy="0 0 0" xyz="0.005 0 +0.018"/>
-      <geometry>
-        <sphere radius="0.019"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.005 0 +0.018"/>
-      <geometry>
-        <sphere radius="0.019"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="0.001"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1.66666666667e-10" ixy="0.0" ixz="0.0" iyy="1.66666666667e-10" iyz="0.0" izz="1.66666666667e-10"/>
-    </inertial>
-  </link>
-
-  <gazebo reference="lf_foot_link">
-    <sensor name="lf_foot_link_contactsensor_sensor" type="contact">
-        <contact>
-            <collision>lf_lower_leg_link_fixed_joint_lump__lf_foot_link_collision_1</collision>
-        </contact>
-        <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>bumper_vals</bumperTopicName>
-            <frameName>lf_foot_link</frameName>
-        </plugin>
-    </sensor>
-  </gazebo>
-
+  <link name="lf_foot_link"/>
   <joint name="lf_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lf_hip_debug_link"/>
@@ -343,14 +311,12 @@
     <child link="lf_lower_leg_link"/>
     <origin rpy="0 0 0" xyz="0 0 -0.141"/>
   </joint>
-
   <joint name="lf_foot_joint" type="fixed">
     <parent link="lf_lower_leg_link"/>
     <child link="lf_foot_link"/>
     <!-- <origin xyz="0.00325 0 -${lower_leg_to_foot_distance}" rpy="0 0 0" /> -->
     <origin rpy="0 0 0" xyz="0 0 -0.141"/>
   </joint>
-
   <transmission name="lf_hip_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="lf_hip_joint">

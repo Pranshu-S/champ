@@ -1,0 +1,74 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"bl_abd_link" [label="bl_abd_link"];
+"bl_thigh_link" [label="bl_thigh_link"];
+"bl_shank_link" [label="bl_shank_link"];
+"bl_toe_link" [label="bl_toe_link"];
+"br_abd_link" [label="br_abd_link"];
+"br_thigh_link" [label="br_thigh_link"];
+"br_shank_link" [label="br_shank_link"];
+"br_toe_link" [label="br_toe_link"];
+"fl_abd_link" [label="fl_abd_link"];
+"fl_thigh_link" [label="fl_thigh_link"];
+"fl_shank_link" [label="fl_shank_link"];
+"fl_toe_link" [label="fl_toe_link"];
+"fr_abd_link" [label="fr_abd_link"];
+"fr_thigh_link" [label="fr_thigh_link"];
+"fr_shank_link" [label="fr_shank_link"];
+"fr_toe_link" [label="fr_toe_link"];
+"imu_link_1" [label="imu_link_1"];
+"tof_link_1" [label="tof_link_1"];
+"tof_link_2" [label="tof_link_2"];
+"tof_link_3" [label="tof_link_3"];
+"tof_link_4" [label="tof_link_4"];
+"tof_link_5" [label="tof_link_5"];
+"tof_link_6" [label="tof_link_6"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "bl_abd_joint" [label="xyz: -0.16695 0.0956 -0.0049999 \nrpy: 0 -0 0"]
+"bl_abd_joint" -> "bl_abd_link"
+"bl_abd_link" -> "bl_hip_joint" [label="xyz: 0 0.052019 0 \nrpy: 0 -0 0"]
+"bl_hip_joint" -> "bl_thigh_link"
+"bl_thigh_link" -> "bl_knee_joint" [label="xyz: 0 0.023481 -0.146 \nrpy: 0 -0 0"]
+"bl_knee_joint" -> "bl_shank_link"
+"bl_shank_link" -> "bl_toe_joint" [label="xyz: 0 0.023481 -0.169 \nrpy: 0 -0 0"]
+"bl_toe_joint" -> "bl_toe_link"
+"base_link" -> "br_abd_joint" [label="xyz: -0.16695 -0.0964 -0.0050001 \nrpy: 0 -0 0"]
+"br_abd_joint" -> "br_abd_link"
+"br_abd_link" -> "br_hip_joint" [label="xyz: 0 -0.052019 0 \nrpy: 0 -0 0"]
+"br_hip_joint" -> "br_thigh_link"
+"br_thigh_link" -> "br_knee_joint" [label="xyz: 0 -0.023481 -0.146 \nrpy: 0 -0 0"]
+"br_knee_joint" -> "br_shank_link"
+"br_shank_link" -> "br_toe_joint" [label="xyz: 0 -0.023481 -0.169 \nrpy: 0 -0 0"]
+"br_toe_joint" -> "br_toe_link"
+"base_link" -> "fl_abd_joint" [label="xyz: 0.16695 0.0956 -0.0050001 \nrpy: 0 -0 0"]
+"fl_abd_joint" -> "fl_abd_link"
+"fl_abd_link" -> "fl_hip_joint" [label="xyz: 0 0.052019 0 \nrpy: 0 -0 0"]
+"fl_hip_joint" -> "fl_thigh_link"
+"fl_thigh_link" -> "fl_knee_joint" [label="xyz: 0 0.023481 -0.146 \nrpy: 0 -0 0"]
+"fl_knee_joint" -> "fl_shank_link"
+"fl_shank_link" -> "fl_toe_joint" [label="xyz: 0 0.023481 -0.169 \nrpy: 0 -0 0"]
+"fl_toe_joint" -> "fl_toe_link"
+"base_link" -> "fr_abd_joint" [label="xyz: 0.16695 -0.0964 -0.0049999 \nrpy: 0 -0 0"]
+"fr_abd_joint" -> "fr_abd_link"
+"fr_abd_link" -> "fr_hip_joint" [label="xyz: 0 -0.052019 0 \nrpy: 0 -0 0"]
+"fr_hip_joint" -> "fr_thigh_link"
+"fr_thigh_link" -> "fr_knee_joint" [label="xyz: 0 -0.023481 -0.146 \nrpy: 0 -0 0"]
+"fr_knee_joint" -> "fr_shank_link"
+"fr_shank_link" -> "fr_toe_joint" [label="xyz: 0 -0.023481 -0.169 \nrpy: 0 -0 0"]
+"fr_toe_joint" -> "fr_toe_link"
+"base_link" -> "imu_joint_1" [label="xyz: 0 0 0.005 \nrpy: 0 -0 0"]
+"imu_joint_1" -> "imu_link_1"
+"base_link" -> "tof_joint_1" [label="xyz: 0.15 0 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_1" -> "tof_link_1"
+"base_link" -> "tof_joint_2" [label="xyz: 0.065 0.047 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_2" -> "tof_link_2"
+"base_link" -> "tof_joint_3" [label="xyz: -0.065 0.047 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_3" -> "tof_link_3"
+"base_link" -> "tof_joint_4" [label="xyz: -0.15 0 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_4" -> "tof_link_4"
+"base_link" -> "tof_joint_5" [label="xyz: -0.065 -0.047 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_5" -> "tof_link_5"
+"base_link" -> "tof_joint_6" [label="xyz: 0.065 -0.047 -0.025 \nrpy: 0 1.5708 -0"]
+"tof_joint_6" -> "tof_link_6"
+}
