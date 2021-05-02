@@ -152,7 +152,7 @@
             <collision>fl_shank_link_collision</collision>
         </contact>
         <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>bumper_vals</bumperTopicName>
+            <bumperTopicName>fl_contact</bumperTopicName>
             <frameName>fl_shank_link</frameName>
         </plugin>
     </sensor>
@@ -291,7 +291,7 @@
             <collision>fr_shank_link_collision</collision>
         </contact>
         <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>bumper_vals</bumperTopicName>
+            <bumperTopicName>fr_contact</bumperTopicName>
             <frameName>fr_shank_link</frameName>
         </plugin>
     </sensor>
@@ -432,7 +432,7 @@
             <collision>bl_shank_link_collision</collision>
         </contact>
         <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>bumper_vals</bumperTopicName>
+            <bumperTopicName>bl_contact</bumperTopicName>
             <frameName>bl_shank_link</frameName>
         </plugin>
     </sensor>
@@ -572,7 +572,7 @@
             <collision>br_shank_link_collision</collision>
         </contact>
         <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>bumper_vals</bumperTopicName>
+            <bumperTopicName>br_contact</bumperTopicName>
             <frameName>br_shank_link</frameName>
         </plugin>
     </sensor>
