@@ -2,7 +2,7 @@
 
 import rospy
 from champ_msgs.msg import ContactsStamped
-
+from stochlite_msgs.msg import contact_foot
 
 global fl_contact
 fl_contact = False
